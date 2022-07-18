@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CV</title>
+    </head>
+    <body>
+            <center>
+                <h1 style="color:dodgerblue"><u>Griselda Muçi</u></h1>
+            </center>
+            <br>
+            <h3 style="color:dodgerblue"><b>ABOUT ME</b></h3>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxum5kxDBxS6Ae4IdvWntvkEqIPPZ_CeirXg&usqp=CAU" width="150" hspace="300" align="right"/>
+            <p>I am a graduate student in
+                mathematics and informatics. I
+                have always had a passion for
+                mathematics. Outside of school, I 
+                did sudokus, measured my entire
+                house, made graphs, and even
+                created my own problems to
+                explore mathematics. I would do
+                all of my work, including tests,
+                without a calculator just to
+                challenge myself and do more
+                math. As the concepts increased
+                in difficulty, the subject became
+                even more fun for me. The
+                dedication and creativity
+                required in advanced
+                mathematics have only
+                empowered my enthusiasm for
+                mathematics. My goal is to share
+                my passion and dedication in
+                math to other people. During my
+                years of study I’ve learned the
+                basics of programming.
+                </p>
+            <hr>
+            <div style="background-color:dodgerblue">
+                <h2 style="color:white"><b>SOFTWARE</b></h2>
+                 <h2  align="center" style="color:white"><b>EXTRACURRICULAR SKILLS </b></h2>
+            </div>
+            <table style="width:100%">
+                <tr>
+                    <td style="width:400px">
+                        <ul>
+                            <li><u>HTML</u></li> 
+                            <li><u>CSS</u></li>
+                            <li><u>PHP</u></li>
+                            <li><u>Bootstrap</u></li>
+                            <li><u>JavaScript</u></li>
+                        </ul>
+                        <td></td><td></td><td></td>
+                    </td>
+            
+                
+                    <td>
+                        <div>
+                        <ul><li>Ability to interact with different people</li>
+                        <li>Willingness to listen, not being judgmental</li>
+                        <li>Ability to Adapt</li>
+                        <li>Interpersonal Skills</li>
+                        <li>Energy</li>
+                        <li>Openness</li></ul></div>
+                        </head>
+                        <div> 
+                    </td>
+                    
+                </tr>
+         </table>
+            <div style="background-color:dodgerblue">
+                    <h2 style="color:white"><b>LANGUAGES</b></h2>
+                    <h2  align="center" style="color:white"><b>HARD SKILLS </b></h2>
+            </div>
+        <table style="width:100%">
+            <tr>
+                <td  style="width:400px">
+                    <ul>
+                        <li>Albanian</li>
+                        <li>English</li>
+                        <li>French</li>
+                        <li>Italian</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Math Expertise & Knowledge</li>
+                        <li>Enthusiasm & Passion for Math</li>
+                        <li>Ability to Teach</li>
+                        <li>Knowledge of Technology</li>
+                    </ul>
+
+                </td>
+            </tr>
+        </table>
+            <div style="background-color:dodgerblue">
+                <h2 style="color:white"><b>EDUCATION</b></h2>
+                <h2  align="center" style="color:white"><b>CONTACT ME </b></h2>
+           </div>
+        <table style="width:100%">
+            <tr>
+                <td style="width:450 px">
+                    <ul>
+                        <li>2017-2020 Bachelor in Mathematics and Informatics.Aleksandër Moisiu University of Durrës.</li>
+                        <li>2020-2022 Msc Computer Science.</li>
+                    </ul>
+                </td>
+                <td>
+                    <h4><a href="griseldaosmuci@gmail.com">Email</a></h4>
+                    <h4><p>+355 xxxxxxxxxx</p></h4>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+</html>
