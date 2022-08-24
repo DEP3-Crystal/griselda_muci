@@ -1,0 +1,496 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+}
+
+body {
+    background: url('https://raw.githubusercontent.com/WebToLearn/personal-page-css-workshop/master/img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5em;
+    margin: 0 0 1.5em 0;
+}
+
+.page-grid {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 990px 1fr;
+    grid-template-areas:
+        ". container ."
+        ". footer .";
+}
+
+.container {
+    grid-area: container;
+    background: white;
+    padding: 30px 20px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0px 6px #c0392b;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.footer {
+    grid-area: footer;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    background: white;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0px 4px #ccc;
+    border-radius: 4px;
+}
+
+.copyright {
+    margin: 0;
+}
+
+.menu {
+    width: 990px;
+    margin: 80px auto 0 auto;
+    text-align: center;
+}
+
+.menu--light {
+    margin: 0 auto 0 auto;
+}
+
+.menu-item {
+    display: inline-block;
+    margin-right: 10px;
+
+    padding: 10px 40px 10px 40px;
+    background: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    outline: none;
+    color: #888;
+    vertical-align: bottom;
+    border-bottom: 1px solid #f1f1f1;
+    ;
+}
+
+.menu-item-active {
+    position: relative;
+    bottom: -1px;
+    color: #c0392b;
+    padding: 15px 40px 15px 40px;
+    margin-top: 0;
+}
+
+.title {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.subtitle {
+    color: #999;
+    font-size: 1.5em;
+    line-height: 1em;
+    margin: 0 0 1em 0;
+    text-align: center;
+}
+
+.header {
+    margin-top: 30px;
+}
+
+hr {
+    margin: 25px 0;
+    border: 1px solid #f1f1f1;
+}
+
+@media (max-width: 990px) {
+    .menu {
+        width: 100%;
+    }
+
+    .page-grid {
+        display: block;
+    }
+
+    .footer {
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background: none;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .footer {
+        margin-top: 3px;
+    }
+}
+
+/*  Add your CSS here */
+@media (max-width: 990px) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    hr {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .menu .menu-item {
+        display: inline-block;
+        flex-direction: column;
+        border-bottom: 1px solid #f1f1f1;
+        margin-top: 0px;
+
+
+    }
+
+}
+
+.contacts {
+    display: flex;
+
+
+}
+
+.contacts .fa-4 {
+    font-size: 60px;
+    justify-content: center;
+
+}
+
+.contacts .fa-5 {
+    font-size: 60px;
+    justify-content: center;
+}
+
+.contacts .fa-6 {
+    font-size: 60px;
+    justify-content: center;
+}
+
+.contacts h1 {
+    font-style: normal;
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+
+
+}
+
+.address,
+.tel,
+.about-me {
+    font-style: normal;
+    text-align: center;
+    padding-left: 20px;
+
+}
+
+@media (max-width: 990px) {
+    .contacts {
+        display: flex;
+
+        flex-direction: column;
+        gap: 10px;
+
+    }
+
+}
+
+/*=======About with Css==========*/
+@media (min-width:990px) {
+
+    .first-line {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 4fr 2.9fr;
+
+
+
+    }
+
+    aside {
+
+        height: fit-content;
+        margin-top: 20px;
+        padding-bottom: 0;
+
+
+    }
+
+    aside li {
+        border-bottom: 1px solid #f1f1f1;
+        color: orangered;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        list-style: none;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: sans-serif;
+    }
+
+    ul {
+        padding-left: 10px;
+        margin: 0;
+        border-left: 1px solid #f1f1f1;
+    }
+
+    li {
+        padding-right: 20px;
+    }
+
+    h3 {
+        color: #999;
+    }
+
+    a {
+        color: orangered;
+        text-decoration: none;
+    }
+
+    .envelope,
+    .facebook,
+    .twitter {
+        color: black;
+        font-size: 50px;
+        padding-left: 10px;
+    }
+
+    .grid-item1 {
+        border: 2px solid #f1f1f1;
+        border-radius: 5px;
+        display: block;
+        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        align-items: center;
+
+    }
+
+    p {
+        font-size: 12px;
+        color: #888;
+        margin: 0;
+    }
+
+    address {
+        grid-column: 1/4;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    a {
+        color: orangered;
+        text-decoration: none;
+    }
+
+    h1 {
+        margin-top: 0;
+    }
+
+    div.first-line {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr;
+        width: 100%;
+        gap: 10px;
+
+    }
+
+    ul {
+
+        color: orangered;
+        font-size: 14px;
+
+        list-style: none;
+        padding: 0;
+        text-align: start;
+        border-left: 1px solid #f1f1f1;
+        padding-left: 10px;
+
+    }
+
+    li {
+        border-bottom: 2px solid #f1f1f1;
+        margin-top: 10px;
+        text-decoration: none;
+        padding-left: 10px;
+        padding-bottom: 10px;
+
+
+
+    }
+
+    address {
+        grid-column: 1/4;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        text-align: start;
+    }
+
+    .grid-item1 {
+        border: 2px solid #f1f1f1;
+        border-radius: 5px;
+        display: block;
+        justify-content: space-between;
+        grid-template-columns: 90px 50px 120px;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        align-items: center;
+
+    }
+
+    img {
+        width: 100%;
+    }
+
+    section.grid-item {
+        text-align: center;
+    }
+
+    .envelope,
+    .facebook,
+    .twitter {
+        color: black;
+        font-size: 50px;
+        padding-left: 10px;
+
+    }
+
+    p {
+        font-size: 12px;
+        color: #888;
+
+    }
+
+    .solutions,
+    .sunny,
+    .luthra {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .luthra {
+        text-align: left;
+    }
+
+    .header {
+        display: none;
+    }
+
+    aside {
+
+        height: fit-content;
+        margin-top: 20px;
+        padding-bottom: 0;
+
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    div.first-line {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.1fr 0.1fr 0.5fr;
+        width: 100%;
+
+    }
+
+    img {
+        width: 100%;
+    }
+
+    a {
+        color: orangered;
+        text-decoration: none;
+    }
+
+    .grid-item1 {
+        border: 2px solid #f1f1f1;
+        border-radius: 5px;
+        display: block;
+        align-items: center;
+        padding: 0;
+
+    }
+
+    p {
+        font-size: 12px;
+        color: #888;
+    }
+
+    h1,
+    h3 {
+        text-align: center;
+    }
+
+    h3 {
+        color: #888;
+    }
+
+    .address {
+        text-align: center;
+    }
+
+    ul {
+        color: orangered;
+        font-size: 14px;
+        font-weight: 550;
+        list-style: none;
+        padding: 0;
+        text-align: center;
+
+
+    }
+
+    li {
+        border-bottom: 2px solid #f1f1f1;
+        margin-top: 10px;
+        text-decoration: none;
+
+
+
+    }
+
+    .envelope,
+    .facebook,
+    .twitter {
+        font-size: 40px;
+        text-align: center;
+
+    }
+
+    .solutions,
+    .sunny,
+    .luthra {
+        text-align: center;
+    }
+}

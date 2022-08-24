@@ -1,0 +1,41 @@
+@media print {
+  .noprint {
+    visibility: hidden;
+  }
+
+  html {
+    zoom: 50%;
+  }
+
+  img {
+
+    width: 60%;
+    margin: auto;
+    display: block;
+  }
+
+  h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    color: black;
+  }
+
+  h1 {
+    font-size: 70px;
+  }
+
+  a {
+    color: black;
+  }
+
+  .container {
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+  }
+
+  .grid-item {
+    text-align: center;
+    color: black;
+  }
+}
