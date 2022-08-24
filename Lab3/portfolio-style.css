@@ -1,0 +1,33 @@
+img {
+
+    width: calc(100% / 3 - 20px);
+}
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+
+@media (max-width: 990px) {
+    img {
+        width: calc(100% / 2 - 20px);
+    }
+
+    header {
+        display: none;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+
+    img {
+        width: 100%;
+    }
+   
+
+}
