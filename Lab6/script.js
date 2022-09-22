@@ -1,9 +1,9 @@
 
 
 document.body.style.fontFamily = "Arial, sans-serif";
-document.getElementById('nickname').innerHTML = "Gris";
-document.getElementById('favorites').innerHTML = '23';
-document.getElementById('hometown').innerHTML = 'Durres, Albania';
+document.getElementById('nickname').textContent = "Gris";
+document.getElementById('favorites').textContent = '23';
+document.getElementById('hometown').textContent = 'Durres, Albania';
 var myli = document.getElementsByTagName('li');
 for (var i = 0; i < myli.length; i++) {
 
