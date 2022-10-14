@@ -1,14 +1,9 @@
 {
   "dogs": [
     {
-      "name": "AFFENPINSCHER 1",
-      "img": "https://images.dog.ceo/breeds/affenpinscher/n02110627_8099.jpg",
-      "id": 1
-    },
-    {
-      "id": 2,
-      "name": "AKITA",
-      "img": "https://images.dog.ceo//breeds//akita//An_Akita_Inu_resting.jpg"
+      "name": "AKITA 3",
+      "img": "https://images.dog.ceo//breeds//akita//An_Akita_Inu_resting.jpg",
+      "id": 2
     },
     {
       "id": 3,

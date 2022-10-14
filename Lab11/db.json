@@ -1,0 +1,34 @@
+{
+    "dogs": [
+        {
+            "id": "5eadf350-105e-11ea-983f-f5983827844a",
+            "name": "AFFENPINSCH New",
+            "img": "NEW IMAGE"
+        },
+        {
+            "id": "71ed9fb0-105e-11ea-983f-f5983827844a",
+            "name": "AKITA",
+            "img": "https://images.dog.ceo//breeds//akita//An_Akita_Inu_resting.jpg"
+        },
+        {
+            "id": "89256140-105e-11ea-983f-f5983827844a",
+            "name": "CHIHUAHUA",
+            "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_7613.jpg"
+        },
+        {
+            "id": "898c1250-105e-11ea-983f-f5983827844a",
+            "name": "LHASA",
+            "img": "https://images.dog.ceo/breeds/lhasa/n02098413_7358.jpg"
+        },
+        {
+            "id": "8a7fc120-105e-11ea-983f-f5983827844a",
+            "name": "HOUND",
+            "img": "https://images.dog.ceo/breeds/hound-afghan/n02088094_2626.jpg"
+        },
+        {
+            "name": "AFFENPINSCH8",
+            "img": "NEW IMAGE",
+            "id": "36692ea09d4f2e40da5cc917fe140bfe"
+        }
+    ]
+}
