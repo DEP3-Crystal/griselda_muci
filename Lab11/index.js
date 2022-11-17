@@ -14,7 +14,7 @@ app.post("/dogs", (req, res) => {
     const crypto = require("crypto");
     const id = crypto.randomBytes(16).toString("hex");
     let newDog = req.body;
-    newDog.id = id;
+    newDog.id = id; 
     dogsList.push(newDog);
     writeJSONFile(dogsList);
     res.send(201);

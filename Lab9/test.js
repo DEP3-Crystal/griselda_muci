@@ -82,7 +82,7 @@ async function addDog() {
     name,
     img
   }
-
+  
   removeRootChildren();
   showLoading();
   const response = await fetch('http://localhost:3000/dogs', {

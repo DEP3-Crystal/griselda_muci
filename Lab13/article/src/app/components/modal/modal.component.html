@@ -1,0 +1,25 @@
+<p>modal works!</p>
+<div class="modal__overlay" *ngIf="showModal" style="display:flex;">
+    <div class="modal">
+        <div class="modal__content">
+            <h2 class="title">Add/Edit article</h2>
+            <form [formGroup]="articleForm">
+                <div class="inputs__container">
+                    <input formControlName="title" type="input" class="input" placeholder="Please enter title">
+                    <input formControlName="tag" type="text" class="input" placeholder="Please enter tag">
+                    <input formControlName="author" type="text" class="input" placeholder="Please enter author">
+                    <input formControlName="date" type="text" class="input" placeholder="Please enter date">
+                    <input formControlName="imgUrl" type="text" class="input" placeholder="Please enter image url">
+                    <input formControlName="saying" type="text" class="input" placeholder="Please enter saying">
+                </div>
+
+                <textarea formControlName="content" class="textarea" name="content" cols="28" rows="7"
+                    placeholder="Please enter content"></textarea>
+                <div class="modal__buttons">
+                    <button type="button" class="button" (click)="toogleCancelModal()">Cancel</button>
+                    <button type="button" class="button button--pink" (click)="updateArticle()" *ngIf="selectedArticle.id">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

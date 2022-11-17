@@ -1,6 +1,6 @@
-
 const root = document.getElementById('root');
 var myID = 0;
+var editIsClicked = false;
 
 function renderNav() {
   const list = ['Travel updates', 'Reviews', 'About', 'Contact']
@@ -19,6 +19,7 @@ function renderNav() {
     a.href = '/';
     a.textContent = link;
 
+
     li.appendChild(a);
     ul.appendChild(li);
   });
@@ -30,16 +31,28 @@ function renderContainer() {
   const addContainer = document.createElement('div');
   addContainer.className = 'add__container';
   const addArticle = document.createElement('button');
+
   addArticle.className = 'button';
   addArticle.id = 'ADD';
   addArticle.textContent = '+ Add Article';
   addContainer.appendChild(addArticle);
   root.appendChild(addContainer);
-  document.getElementById('ADD').addEventListener('click', () => functionModal());
+  document.getElementById('ADD').addEventListener('click', () => {
+    editIsClicked = false;
+    console.log("edit is clicked: " + editIsClicked);
+
+    functionModal();
+  });
 
 }
+function cleanModalChildred() {
+  const modalOverlay = document.getElementById('modal__overlay');
+  modalOverlay.innerHTML = "";
+}
+
 function functionModal() {
-  const modalOverlay = document.createElement('div');
+  const modalOverlay = document.getElementById('modal__overlay');
+  cleanModalChildred();
   modalOverlay.className = 'modal__overlay';
   const modal = document.createElement('div');
   modal.className = 'modal';
@@ -93,27 +106,32 @@ function functionModal() {
   textArea.rows = '7'
   textArea.placeholder = 'Please enter content';
   textArea.id = 'textAreaa';
-  const modalButtons = document.createElement('div');
+  const modalButtons = modalContent.appendChild(document.createElement('div'));
   modalButtons.className = ' show-modal modal__buttons ';
-  const cancelButton = document.createElement('button');
+  const cancelButton = modalButtons.appendChild(document.createElement('button'));
   cancelButton.type = 'button';
   cancelButton.className = 'button';
   cancelButton.textContent = 'Cancel';
   cancelButton.id = 'cancel';
-  const saveButton = document.createElement('button');
+  const saveButton = modalButtons.appendChild(document.createElement('button'));
   saveButton.type = 'button';
   saveButton.className = 'button button--pink';
   saveButton.textContent = 'Save';
   saveButton.id = 'save';
   saveButton.addEventListener('click', () => {
-    if (myID == 0) {
+    const container = document.getElementById('main');
+    if (editIsClicked) {
+      removeAllChildNodes(container);
+      updateArticlesAsync(myID);
+      getArticles();
+    }
+    else {
+      removeAllChildNodes(container);
       add();
     }
-    else { updateArticles(myID) }
+    hideModal();
   }
   );
-  modalButtons.appendChild(cancelButton);
-  modalButtons.appendChild(saveButton);
   modalContent.appendChild(addEdit);
   modalContent.appendChild(inputsContainer);
   modalContent.appendChild(textArea);
@@ -122,10 +140,20 @@ function functionModal() {
   modalOverlay.appendChild(modal);
   modalOverlay.setAttribute('style', 'display:flex');
   document.body.appendChild(modalOverlay);
-  cancelButton.addEventListener('click', function () {
-    modalOverlay.style.visibility = "hidden";
-    updateArticles();
+  cancelButton.addEventListener('click', () => {
+    hideModal();
+    clearForm()
   })
+}
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
+function hideModal() {
+  const modalOverlay = document.getElementsByClassName('modal__overlay')[0];
+  modalOverlay.style.visibility = "hidden";
 }
 
 function renderMain() {
@@ -135,6 +163,7 @@ function renderMain() {
 }
 
 function getArticles() {
+  console.log("edit is clicked: " + editIsClicked);
   fetch('http://localhost:3000/articles')
 
     .then(function (response) {
@@ -152,7 +181,7 @@ function getArticles() {
       console.log('Fetch Error :-S', err);
     });
 }
-function add() {
+async function add() {
   const title = document.getElementById('input1').value;
   const tag = document.getElementById('input2').value;
   const author = document.getElementById('input3').value;
@@ -169,7 +198,7 @@ function add() {
     saying,
     content,
   }
-  const response = fetch('http://localhost:3000/articles', {
+  const response = await fetch('http://localhost:3000/articles', {
     method: 'POST',
     headers: {
       "Content-type": "application/json"
@@ -213,6 +242,9 @@ function renderArticles(articlesList) {
       edit.className = 'actions__btn';
       edit.textContent = 'Edit';
       edit.addEventListener('click', function () {
+        editIsClicked = true;
+        console.log("edit is clicked: " + editIsClicked);
+
         functionModal();
         const input_1 = document.getElementById('input1');
         input_1.value = item.title;
@@ -229,7 +261,8 @@ function renderArticles(articlesList) {
         const input_7 = document.getElementById('textAreaa');
         input_7.value = item.content;
         myID = item.id;
-        document.getElementById('save').addEventListener('click', () => updateArticles(myID));
+        console.log("my id: " + myID);
+        document.getElementById('save').addEventListener('click', () => updateArticlesAsync(myID));
       })
 
       const del = document.createElement('button');
@@ -242,6 +275,8 @@ function renderArticles(articlesList) {
             "Content-type": "application/json"
           }
         });
+        const container = document.getElementById('main');
+        removeAllChildNodes(container);
         getArticles();
       })
       actions_conatiner.appendChild(edit);
@@ -264,7 +299,6 @@ function renderArticles(articlesList) {
       //Read More Button
       readButton.addEventListener('click', function () {
         p2.textContent = item.content;
-
       })
 
       readMoreContainer.appendChild(readButton);
@@ -279,7 +313,7 @@ function renderArticles(articlesList) {
     })
   }
 }
-async function updateArticles(id) {
+async function updateArticlesAsync(id) {
   const title = document.getElementById('input1').value;
   const tag = document.getElementById('input2').value;
   const author = document.getElementById('input3').value;
@@ -303,15 +337,30 @@ async function updateArticles(id) {
       "Content-type": "application/json"
     },
     body: JSON.stringify(dataForServer)
-
-
   });
   clearForm();
-  getArticles();
+  hideModal();
+
 }
 
 function clearForm() {
-  updateForm('', '', '', '', '', '', '', '');
+  const title = document.getElementById('input1');
+  const tag = document.getElementById('input2');
+  const author = document.getElementById('input3');
+  const date = document.getElementById('input4');
+  const imgUrl = document.getElementById('input5');
+  const saying = document.getElementById('input6');
+  const content = document.getElementById('textAreaa');
+
+  title.textContent = "";
+  tag.textContent = "";
+  author.textContent = "";
+  date.textContent = "";
+  date.textContent = "";
+  imgUrl.textContent = "";
+  saying.textContent = "";
+  content.textContent = "";
+
 }
 
 function renderFooter() {
@@ -339,17 +388,3 @@ function initFunction() {
 }
 
 initFunction();
-
-
-
-
-
-
-
-
-
-
-
-
-
-

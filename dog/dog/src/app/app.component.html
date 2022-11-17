@@ -1,0 +1,42 @@
+
+<!-- 
+<h1>Hello!</h1>
+<p>{{title}}</p>
+<p>{{title | uppercase}}</p>
+<p>{{lotterySum | currency}}</p>
+<p *ngIf="isOpen">
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit neque quo possimus quidem repudiandae illo, dicta voluptatum sapiente quibusdam. Ullam debitis suscipit quibusdam in cum?
+</p> -->
+
+<!-- <button (click)="toggle()">Click Me</button>
+<ul>
+  <app-trans *ngFor="let trans of transactions" [info]="trans" (backToParent) = "logValueFromChild($event)"></app-trans>
+  <li *ngFor="let trans of transactions">
+    {{ trans.amount }}
+  </li>
+
+  <h2>Async way</h2>
+  <li *ngFor="let dog of dogList$ | async">
+    {{ dog.name | lowercase }}
+  </li>
+</ul> -->
+<form [formGroup]="dogForm">
+
+  <label for="name">Name: </label>
+  <input id="name" type="text" formControlName="name">
+
+  <label for="img">Img: </label>
+  <input id="img" type="text" formControlName="img">
+  <button (click)="updateDog()" *ngIf="selectedDogId" type="button">Update</button>
+
+</form>
+
+<h2>Ts way</h2>
+<ul> 
+  <app-dog
+    *ngFor="let dog of dogList"
+    [dog]="dog"
+    (editDogsEvent)="editDog($event)"
+    (getDogsEvent)="getDogs()">
+  </app-dog>
+</ul>
